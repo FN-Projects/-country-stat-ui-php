@@ -1,0 +1,17 @@
+{
+    "name": "hp/php-app",
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core/",
+            "Controllers\\": "controllers/",
+            "Models\\": "models/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nores",
+            "email": "70499515+EspoirNorbert@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
