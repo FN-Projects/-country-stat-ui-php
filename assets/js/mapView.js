@@ -74,6 +74,9 @@ $(document).ready(function () {
   }
 
   function addClassToPaths(data, article) {
+    if (article== "all"){
+      alert("Les donnees sur la carte ont été recuperer");
+    }
     const path = document.querySelectorAll("path");
     path.forEach(function (path) {
       data.forEach(function (country) {
