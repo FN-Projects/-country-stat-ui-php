@@ -1,23 +1,12 @@
-<div id="dashboard">
+<div id="dashboard" class="normal-view">
+    <!-- TopDashboardComponent -->
     <div class="d-flex justify-content-start topdashboard">
-        <h4 class="fw-bolder">Dashboard</h4>
+        <h4 class="fw-bolder text-dark"><i class="fa fa-home"></i> Tableau de bord</h4>
         <div class="d-flex justify-content-end ms-auto">
-            <div class="dropdown">
-                <button type="button" class="btn btn-dark mr-2 dropdown-toggle" data-toggle="dropdown">
-                    Filtrer par <i class="fa fa-filter classroom-color"></i>
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Tous</a>
-                    <?php
-                    // chercher les continents
-
-use Core\Helper;
-
-                    ?>
-                </div>
-            </div>
+            <div class="dropdown"></div>
         </div>
     </div>
+
     <!-- CoutComponent -->
     <div class="count mt-3">
         <div class="row">
@@ -112,28 +101,55 @@ use Core\Helper;
 
     <!-- CountryListComponent -->
     <div id="countryList" class="mt-3">
-        <h4>Tous les pays</h4>
-        <div class="countryTable">
-            <div class="table-responsive shadow-sm bg-white rounded p-1 mt-3">
-                <table id="countryData" class="table table-striped table-hover rounded-lg border border-table bg-white">
-                    <thead class="bg-dark text-white">
-                        <tr>
-                            <th>Flag</th>
-                            <th>Pays</th>
-                            <th>Article</th>
-                            <th>Continent</th>
-                    </thead>
-                    <tbody>
-                       <?php foreach ($countries as $country ) : extract($country)?>
-                        <tr>
-                            <td><img class="border" src="https://www.countryflagicons.com/FLAT/32/<?= $flag ?>.png" alt="Drapeaux du <?= $name ?>" ></td> 
-                            <td><?= $name ?></td>
-                            <td><?= Helper::format_display_article($article) ?></td>
-                            <td><?= $continent ?></td>
-                        </tr>
-                       <?php endforeach; ?>
-                    </tbody>
-                </table>
+        <ul class="nav nav-tabs bg-white" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="all-tab" data-bs-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">Tous les pays</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="le-tab" data-bs-toggle="tab" href="#le" role="tab" aria-controls="le" aria-selected="false">Pays avec <strong>le</strong></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="la-tab" data-bs-toggle="tab" href="#la" role="tab" aria-controls="la" aria-selected="false">Pays avec <strong>la</strong></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="l-tab" data-bs-toggle="tab" href="#l" role="tab" aria-controls="l" aria-selected="false">Pays avec <strong>l</strong></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="les-tab" data-bs-toggle="tab" href="#les" role="tab" aria-controls="les" aria-selected="false">Pays avec <strong>les</strong></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="indefinis-tab" data-bs-toggle="tab" href="#indefinis" role="tab" aria-controls="indefinis" aria-selected="false">Pays indéfinis</a>
+            </li>
+        </ul>
+        <div class="tab-content bg-white" id="myTabContent">
+            <div class="tab-pane container fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+                <!-- Contenu pour l'onglet "Tous les pays" -->
+                <?php require_once('countries.php'); ?>
+            </div>
+            <div class="tab-pane container fade" id="le" role="tabpanel" aria-labelledby="le-tab">
+                <!-- Contenu pour l'onglet "Pays avec 'le'" -->
+                <?php require_once('countriesArticleLe.php'); ?>
+
+            </div>
+            <div class="tab-pane container fade" id="la" role="tabpanel" aria-labelledby="la-tab">
+                <!-- Contenu pour l'onglet "Pays avec 'la'" -->
+                <?php require_once('countriesArticleLa.php'); ?>
+
+            </div>
+            <div class="tab-pane container fade" id="l" role="tabpanel" aria-labelledby="l-tab">
+                <!-- Contenu pour l'onglet "Pays avec 'l'" -->
+                <?php require_once('countriesArticleL.php'); ?>
+
+            </div>
+            <div class="tab-pane container fade" id="les" role="tabpanel" aria-labelledby="les-tab">
+                <!-- Contenu pour l'onglet "Pays avec 'les'" -->
+                <?php require_once('countriesArticleLes.php'); ?>
+
+            </div>
+            <div class="tab-pane container fade" id="indefinis" role="tabpanel" aria-labelledby="indefinis-tab">
+                <!-- Contenu pour l'onglet "Pays indéfinis" -->
+                <?php require_once('countriesArticle.php'); ?>
+
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
 <footer class="mt-auto">
-    <div class="footer bg-dark text-white p-5 text-center">
-        <p>Copyright &copy; App 2021- <?= date('Y') ?> - All Right reserved</p>
+    <div class="footer bg-app text-white text-center p-3">
+        <p>Copyright &copy; CountryArticleStat 2021- <?= date('Y') ?> - All Right reserved</p>
     </div>
 </footer>

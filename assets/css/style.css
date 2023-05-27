@@ -1,3 +1,134 @@
-* {
-    font-family: Arial, Helvetica, sans-serif;
+:root {
+    --app-color: #8bc34a;
+    --app-success: #198754;
+    --app-danger: #dc3545;
+    --app-info: #0dcaf0;
+    --app-dark: #212529;
+    --app-primary:#0d6efd;
+    --app-secondary: #6c757d;
+    --app-success-opacity: #0ab163;
+    --app-danger-opacity: #6a2d33;
+    --app-info-opacity:#108ba4;
+    --app-dark-opacity:#1d1e1e;
+    --app-primary-opacity:#1755b2;
+    --app-secondary-opacity:#9ea2a6;
 }
+*{
+    font-family: Arial, Helvetica, sans-serif;
+ }
+
+main{
+    background-color: #d3d3d3;
+ }
+
+.bg-app {
+    background-color: var(--app-color) !important;
+}
+
+.text-app {
+    color: var(--app-color);
+}
+
+.nav-tabs .nav-item .nav-link.active {
+    border-top: #FFFFFF;
+    border-right: #FFFFFF;
+    border-left: #FFFFFF;
+    border-bottom: 3px solid var(--app-color);
+}
+ .nav-link.active {
+    border-top: #343232;
+    border-right: #343232;
+    border-left: #343232;
+    font-weight: bolder;
+    color: var(--app-color) !important
+}
+
+.nav-tabs .nav-link {
+    color: #374957 !important;
+}
+
+/*********************/
+
+.map__image path {
+    fill: var(--app-color);
+    stroke: #FFFFFF;
+    stroke-width: 1px;
+    transition: fill 0.3s;
+}
+
+
+.tab-active {
+    background-color: var(--app-color) !important;
+    font-weight: bolder !important;
+    border-radius: 0 !important;
+    transition: 0.3s ease-in-out background-color;
+}
+
+.active-article-le {
+    background-color: #6a2d33;
+}
+
+.legend-bar {
+    width: 20px;
+    height: 20px;
+  }
+
+/********
+******
+Article Map active map
+***/
+
+.countryActive {
+    fill: var(--app-success) !important
+}
+
+
+.countryActive:hover {
+    fill: var(--app-success-opacity) !important
+}
+
+.countryArticleLeActive {
+    fill: var(--app-danger) !important;
+}
+
+.countryArticleLeActive:hover {
+    fill: var(--app-danger-opacity) !important;
+}
+
+.countryArticleLaActive {
+    fill: var(--app-info) !important;
+}
+
+.countryArticleLaActive:hover {
+    fill: var(--app-info-opacity) !important;
+}
+
+.countryArticleLActive {
+    fill: var(--app-dark) !important;
+}
+
+.countryArticleLActive:hover {
+    fill: var(--app-dark-opacity) !important;
+}
+
+.countryArticleLesActive {
+    fill: var(--app-primary) !important;
+}
+
+.countryArticleLesActive:hover {
+    fill: var(--app-primary-opacity) !important;
+}
+
+.countryArticleActive {
+    fill: var(--app-secondary) !important;
+}
+
+.countryArticleActive:hover {
+    fill: var(--app-secondary-opacity) !important;
+}
+
+.map__image path:hover {
+    fill: #5560c8;
+}
+
+
